@@ -1,0 +1,621 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+---
+
+<BaseLayout
+  title="Pricing | ATECH.AI Sustainability Platform"
+  description="ATECH.AI subscription plans for EECA compliance, ESG reporting, and AI-driven energy management. Flexible monthly and yearly options for Malaysian organisations."
+>
+
+  <section class="pricing-section">
+
+    <!-- Background layers -->
+    <div class="pricing-bg" aria-hidden="true">
+      <div class="pricing-grid"></div>
+      <div class="pricing-ellipse e1"></div>
+      <div class="pricing-ellipse e2"></div>
+      <div class="pricing-glow"></div>
+      <div class="sparkles-wrap" id="sparklesWrap"></div>
+    </div>
+
+    <div class="container pricing-inner">
+
+      <!-- Header -->
+      <article class="pricing-header">
+        <h1 class="pricing-title" data-reveal>
+          Plans that work<br/>
+          <span class="title-gradient">for your organisation</span>
+        </h1>
+        <p class="pricing-sub" data-reveal>
+          Designed for Malaysian organisations navigating EECA compliance,
+          ESG reporting, and AI-driven energy management.
+        </p>
+
+        <!-- Toggle -->
+        <div class="toggle-wrap" data-reveal>
+          <button class="toggle-btn active" id="btnMonthly">Monthly</button>
+          <button class="toggle-btn" id="btnYearly">
+            Yearly
+            <span class="save-chip">Save up to 20%</span>
+          </button>
+        </div>
+      </article>
+
+      <!-- Cards -->
+      <div class="cards-grid" data-stagger>
+
+        <!-- Card 1: EECA Compliance -->
+        <div class="p-card">
+          <div class="card-top">
+            <h3 class="card-name">EECA Compliance</h3>
+            <p class="card-desc">
+              For organisations starting their EECA compliance journey with
+              automated monitoring, analysis, and reporting.
+            </p>
+          </div>
+
+          <div class="card-price">
+            <div class="price-row">
+              <span class="price-sym">RM</span>
+              <span class="price-num" id="p1">1,750</span>
+              <span class="price-per" id="per1">/month</span>
+            </div>
+            <div class="price-note" id="n1">&nbsp;</div>
+          </div>
+
+          <a href="/contact" class="card-cta cta-outline">Get Started</a>
+
+          <div class="features">
+            <p class="feat-label">Includes:</p>
+            <ul>
+              <li>Auto Data Collection &amp; Analysis</li>
+              <li>Automated EECA Compliance Reporting</li>
+              <li>Energy Performance Benchmarking</li>
+              <li>Monthly Performance Dashboards</li>
+              <li>Trend Analysis &amp; Anomaly Detection</li>
+              <li>Complaint Reporting Format</li>
+              <li>Package deal: 5 sites, 1 site free</li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- Card 2: Expert Assurance (Popular) -->
+        <div class="p-card p-card-popular">
+          <div class="popular-label">⭐ Most Popular</div>
+
+          <div class="card-top card-top-popular">
+            <h3 class="card-name">Expert Assurance</h3>
+            <p class="card-desc">
+              EECA compliance plus dedicated ATECH experts for data verification,
+              compliance guidance, and ESG readiness.
+            </p>
+          </div>
+
+          <div class="card-price">
+            <div class="price-row">
+              <span class="price-sym">RM</span>
+              <span class="price-num" id="p2">1,750</span>
+              <span class="price-per" id="per2">/month</span>
+            </div>
+            <div class="price-note" id="n2">&nbsp;</div>
+          </div>
+
+          <a href="/contact" class="card-cta cta-primary">Get Started</a>
+
+          <div class="features">
+            <p class="feat-label">Everything in EECA Compliance, plus:</p>
+            <ul>
+              <li>Expert Data Verification</li>
+              <li>Compliance Guidance &amp; Advisory</li>
+              <li>Sustainability Reporting Assurance</li>
+              <li>ESG Readiness Support</li>
+              <li>GHG Monitoring &amp; Reporting</li>
+              <li>ISO-aligned Sustainability Framework</li>
+              <li>EMGS / AEMAS Readiness</li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- Card 3: @AI on Cisco -->
+        <div class="p-card">
+          <div class="card-top">
+            <div class="card-name-row">
+              <h3 class="card-name">@AI on Cisco</h3>
+              <span class="ai-chip">⚡ AI</span>
+            </div>
+            <p class="card-desc">
+              Full-stack secure AI platform on Cisco infrastructure for large
+              institutions, REITs, hospitals, and manufacturing facilities.
+            </p>
+          </div>
+
+          <div class="card-price">
+            <div class="price-row">
+              <span class="price-sym">RM</span>
+              <span class="price-num" id="p3">2,500</span>
+              <span class="price-per" id="per3">/month</span>
+            </div>
+            <div class="price-note" id="n3">&nbsp;</div>
+          </div>
+
+          <a href="/contact" class="card-cta cta-outline">Contact Sales</a>
+
+          <div class="features">
+            <p class="feat-label">Everything in Expert Assurance, plus:</p>
+            <ul>
+              <li>AI-Driven Operational Insights</li>
+              <li>Predictive Sustainability Analytics</li>
+              <li>Secure IoT Deployment</li>
+              <li>Cisco-enabled Cloud Infrastructure</li>
+              <li>Governance &amp; Traceability Engine</li>
+              <li>Automated Alerts &amp; Notifications</li>
+              <li>ESG Reasonable Assurance</li>
+            </ul>
+          </div>
+        </div>
+
+      </div><!-- /cards-grid -->
+
+      <!-- Add-ons note -->
+      <p class="addons-note" data-reveal>
+        Optional add-ons: Water Monitoring · Waste Monitoring · EMGS Module ·
+        GHG-ISO Module · Custom Integrations
+      </p>
+
+      <!-- Industries -->
+      <div class="industries" data-reveal>
+        <p class="ind-label">Industries we serve</p>
+        <div class="ind-tags">
+          <span>Commercial Buildings</span>
+          <span>Hospitals &amp; Healthcare</span>
+          <span>Hospitality &amp; Hotels</span>
+          <span>Manufacturing</span>
+          <span>Industrial Plants</span>
+          <span>REITs</span>
+          <span>SMEs &amp; Corporate</span>
+          <span>Educational Institutions</span>
+        </div>
+      </div>
+
+    </div><!-- /container -->
+  </section>
+
+  <!-- ───────────────────────────── STYLES ───────────────────────────── -->
+  <style>
+
+    /* ── Section wrapper ── */
+    .pricing-section {
+      background: #0F0F23;
+      color: #fff;
+      min-height: 100vh;
+      padding: 5rem 0 4rem;
+      position: relative;
+      overflow: hidden;
+    }
+    .pricing-inner { position: relative; z-index: 10; }
+
+    /* ── Background layers ── */
+    .pricing-bg { position: absolute; inset: 0; pointer-events: none; }
+
+    /* Subtle grid */
+    .pricing-grid {
+      position: absolute; inset: 0;
+      background-image:
+        linear-gradient(to right,  rgba(255,255,255,0.04) 1px, transparent 1px),
+        linear-gradient(to bottom, rgba(255,255,255,0.03) 1px, transparent 1px);
+      background-size: 70px 80px;
+      mask-image: radial-gradient(60% 60% at 50% 20%, white, transparent);
+      -webkit-mask-image: radial-gradient(60% 60% at 50% 20%, white, transparent);
+    }
+
+    /* Glowing ring ellipses */
+    .pricing-ellipse {
+      position: absolute;
+      border-radius: 50%;
+      left: -35%; right: -35%;
+      top: -120px;
+      height: 680px;
+    }
+    .e1 {
+      border: 140px solid rgba(6, 182, 212, 0.13);
+      filter: blur(64px);
+    }
+    .e2 {
+      border: 140px solid rgba(167, 139, 250, 0.09);
+      filter: blur(90px);
+      animation: ellipsePulse 8s ease-in-out infinite;
+    }
+    @keyframes ellipsePulse {
+      0%, 100% { opacity: 0.6; }
+      50%       { opacity: 1; }
+    }
+
+    /* Central radial glow */
+    .pricing-glow {
+      position: absolute;
+      left: 10%; right: 10%;
+      top: 0; height: 100%;
+      background: radial-gradient(circle at 50% 30%,
+        rgba(6,182,212,0.10) 0%, transparent 60%);
+    }
+
+    /* Sparkle dots */
+    .sparkles-wrap { position: absolute; inset: 0; overflow: hidden; }
+    .sparkle-dot {
+      position: absolute;
+      width: 2px; height: 2px;
+      border-radius: 50%;
+      background: #fff;
+      opacity: 0;
+      animation: sparkFade var(--dur, 4s) var(--del, 0s) ease-in-out infinite;
+    }
+    @keyframes sparkFade {
+      0%, 100% { opacity: 0; transform: scale(0.5); }
+      50%       { opacity: var(--op, 0.7); transform: scale(1); }
+    }
+
+    /* ── Header ── */
+    .pricing-header {
+      text-align: center;
+      max-width: 620px;
+      margin: 0 auto 3.5rem;
+    }
+    .pricing-title {
+      font-size: clamp(1.8rem, 4vw, 2.8rem);
+      font-weight: 700;
+      line-height: 1.2;
+      margin-bottom: 1rem;
+    }
+    .title-gradient {
+      background: linear-gradient(90deg, #06B6D4, #A78BFA);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+    .pricing-sub {
+      color: rgba(255,255,255,0.55);
+      line-height: 1.7;
+      margin-bottom: 2rem;
+    }
+
+    /* ── Toggle ── */
+    .toggle-wrap {
+      display: inline-flex;
+      background: rgba(255,255,255,0.05);
+      border: 1px solid rgba(255,255,255,0.10);
+      border-radius: 9999px;
+      padding: 4px;
+      gap: 2px;
+    }
+    .toggle-btn {
+      position: relative;
+      padding: 0.5rem 1.4rem;
+      border-radius: 9999px;
+      border: none;
+      background: transparent;
+      color: rgba(255,255,255,0.55);
+      font-size: 0.88rem;
+      font-weight: 500;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      transition: color 0.25s ease, background 0.25s ease, box-shadow 0.25s ease;
+    }
+    .toggle-btn.active {
+      color: #fff;
+      background: linear-gradient(135deg, #0891B2, #06B6D4);
+      box-shadow: 0 0 18px rgba(6,182,212,0.45);
+    }
+    .save-chip {
+      background: rgba(6,182,212,0.18);
+      border: 1px solid rgba(6,182,212,0.35);
+      border-radius: 9999px;
+      padding: 0.1rem 0.55rem;
+      font-size: 0.62rem;
+      color: #06B6D4;
+      font-weight: 700;
+      letter-spacing: 0.03em;
+      white-space: nowrap;
+    }
+
+    /* ── Cards Grid — subgrid so rows are shared across all 3 cards ── */
+    .cards-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      grid-template-rows: auto auto auto auto;
+      column-gap: 1.5rem;
+      row-gap: 1.25rem;
+      max-width: 1020px;
+      margin: 0 auto 2.5rem;
+      align-items: start;
+    }
+
+    /* ── Card ── */
+    .p-card {
+      position: relative;
+      border-radius: 18px;
+      background: linear-gradient(145deg,
+        rgba(255,255,255,0.06) 0%,
+        rgba(255,255,255,0.03) 100%);
+      border: 1px solid rgba(255,255,255,0.09);
+      transition: border-color 0.3s ease, box-shadow 0.3s ease, transform 0.3s ease;
+      /* Subgrid: span all 4 row tracks and share them with siblings */
+      grid-row: span 4;
+      display: grid;
+      grid-template-rows: subgrid;
+      padding: 0 2rem 2rem;
+    }
+    .p-card:hover {
+      border-color: rgba(6,182,212,0.35);
+      box-shadow: 0 12px 48px rgba(6,182,212,0.10);
+      transform: translateY(-4px);
+    }
+
+    /* Popular variant */
+    .p-card-popular {
+      border-color: rgba(6,182,212,0.45);
+      background: linear-gradient(145deg,
+        rgba(6,182,212,0.08) 0%,
+        rgba(167,139,250,0.05) 100%);
+      box-shadow:
+        0 0 0 1px rgba(6,182,212,0.25),
+        0 0 80px rgba(6,182,212,0.18);
+    }
+    .p-card-popular:hover {
+      box-shadow:
+        0 0 0 1px rgba(6,182,212,0.4),
+        0 0 110px rgba(6,182,212,0.28),
+        0 12px 40px rgba(6,182,212,0.14);
+    }
+
+    .popular-label {
+      position: absolute;
+      top: -16px; left: 50%;
+      transform: translateX(-50%);
+      background: linear-gradient(90deg, #0891B2, #06B6D4);
+      color: #fff;
+      padding: 0.28rem 1.2rem;
+      border-radius: 9999px;
+      font-size: 0.72rem;
+      font-weight: 700;
+      white-space: nowrap;
+      box-shadow: 0 4px 18px rgba(6,182,212,0.45);
+      letter-spacing: 0.03em;
+    }
+
+    /* Card sections */
+    .card-top {
+      padding-top: 2rem;
+      display: flex;
+      flex-direction: column;
+      gap: 0.75rem;
+    }
+    .card-top-popular { padding-top: 2.5rem; }
+    .card-price { display: flex; flex-direction: column; gap: 0.2rem; }
+
+    /* Card typography */
+    .card-name-row { display: flex; align-items: center; gap: 0.65rem; }
+    .card-name { font-size: 1.45rem; font-weight: 700; color: #fff; margin: 0; }
+    .card-desc {
+      color: rgba(255,255,255,0.5);
+      font-size: 0.86rem;
+      line-height: 1.65;
+      margin: 0;
+    }
+
+    .ai-chip {
+      background: rgba(6,182,212,0.15);
+      border: 1px solid rgba(6,182,212,0.4);
+      border-radius: 6px;
+      padding: 0.2rem 0.55rem;
+      font-size: 0.68rem;
+      color: #06B6D4;
+      font-weight: 700;
+      letter-spacing: 0.05em;
+      white-space: nowrap;
+    }
+
+    /* Price */
+    .price-row { display: flex; align-items: baseline; gap: 0.15rem; }
+    .price-sym { font-size: 1.15rem; font-weight: 600; color: rgba(255,255,255,0.65); }
+    .price-num {
+      font-size: 2.6rem;
+      font-weight: 800;
+      color: #fff;
+      line-height: 1;
+      transition: opacity 0.22s ease, transform 0.22s ease;
+    }
+    .price-num.switching { opacity: 0; transform: translateY(-10px); }
+    .price-per { font-size: 0.88rem; color: rgba(255,255,255,0.4); margin-left: 0.2rem; }
+    .price-note {
+      font-size: 0.76rem;
+      color: #06B6D4;
+      min-height: 1.1em;
+      margin-top: -0.5rem;
+    }
+
+    /* CTAs */
+    .card-cta {
+      display: block;
+      text-align: center;
+      padding: 0.85rem 1.5rem;
+      border-radius: 10px;
+      font-weight: 600;
+      font-size: 0.93rem;
+      text-decoration: none;
+      transition: all 0.22s ease;
+    }
+    .cta-primary {
+      background: linear-gradient(135deg, #0891B2, #06B6D4);
+      color: #fff;
+      box-shadow: 0 4px 22px rgba(6,182,212,0.38);
+    }
+    .cta-primary:hover {
+      box-shadow: 0 6px 32px rgba(6,182,212,0.55);
+      transform: translateY(-2px);
+    }
+    .cta-outline {
+      border: 1px solid rgba(255,255,255,0.18);
+      color: rgba(255,255,255,0.8);
+      background: rgba(255,255,255,0.04);
+    }
+    .cta-outline:hover {
+      border-color: #06B6D4;
+      color: #06B6D4;
+      background: rgba(6,182,212,0.07);
+    }
+
+    /* Features list */
+    .features { display: flex; flex-direction: column; gap: 0.55rem; }
+    .feat-label {
+      font-size: 0.74rem;
+      font-weight: 700;
+      color: rgba(255,255,255,0.4);
+      text-transform: uppercase;
+      letter-spacing: 0.07em;
+      margin: 0;
+    }
+    .features ul {
+      list-style: none; padding: 0; margin: 0;
+      border-top: 1px solid rgba(255,255,255,0.07);
+      padding-top: 0.7rem;
+      display: flex; flex-direction: column; gap: 0.5rem;
+    }
+    .features li {
+      display: flex; align-items: center; gap: 0.6rem;
+      font-size: 0.86rem; color: rgba(255,255,255,0.65);
+    }
+    .features li::before {
+      content: '';
+      width: 6px; height: 6px;
+      border-radius: 50%;
+      background: #06B6D4;
+      flex-shrink: 0;
+    }
+    .p-card-popular .features li::before { background: #06B6D4; }
+
+    /* Add-ons note */
+    .addons-note {
+      text-align: center;
+      color: rgba(255,255,255,0.35);
+      font-size: 0.82rem;
+      max-width: 580px;
+      margin: 0 auto 3rem;
+    }
+
+    /* Industries */
+    .industries { text-align: center; }
+    .ind-label {
+      font-size: 0.75rem;
+      color: rgba(255,255,255,0.35);
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      margin-bottom: 1rem;
+    }
+    .ind-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+      justify-content: center;
+    }
+    .ind-tags span {
+      background: rgba(255,255,255,0.05);
+      border: 1px solid rgba(255,255,255,0.10);
+      border-radius: 9999px;
+      padding: 0.3rem 0.85rem;
+      font-size: 0.78rem;
+      color: rgba(255,255,255,0.55);
+      transition: border-color 0.2s, color 0.2s;
+    }
+    .ind-tags span:hover { border-color: rgba(6,182,212,0.4); color: #06B6D4; }
+
+    @media (max-width: 700px) {
+      .cards-grid {
+        grid-template-columns: 1fr;
+        grid-template-rows: none;
+        row-gap: 2rem;
+      }
+      .p-card {
+        grid-row: auto;
+        grid-template-rows: auto;
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
+        padding: 2rem;
+      }
+      .card-top { padding-top: 0; }
+      .card-top-popular { padding-top: 0.5rem; }
+      .toggle-btn { padding: 0.5rem 1rem; }
+    }
+  </style>
+
+  <!-- ───────────────────────────── SCRIPTS ───────────────────────────── -->
+  <script>
+    /* ── Sparkle dots ── */
+    const wrap = document.getElementById('sparklesWrap');
+    if (wrap) {
+      for (let i = 0; i < 55; i++) {
+        const d = document.createElement('div');
+        d.className = 'sparkle-dot';
+        d.style.cssText = [
+          `left:${Math.random() * 100}%`,
+          `top:${Math.random() * 70}%`,
+          `--dur:${(Math.random() * 4 + 2).toFixed(1)}s`,
+          `--del:${(Math.random() * 6).toFixed(1)}s`,
+          `--op:${(Math.random() * 0.5 + 0.3).toFixed(2)}`,
+        ].join(';');
+        wrap.appendChild(d);
+      }
+    }
+
+    /* ── Monthly / Yearly toggle ── */
+    const plans = [
+      {
+        num: 'p1', per: 'per1', note: 'n1',
+        monthly: '1,750', yearly: '16,800',
+        mPer: '/month', yPer: '/year',
+        yNote: 'Billed annually · RM 1,400 / mo effective'
+      },
+      {
+        num: 'p2', per: 'per2', note: 'n2',
+        monthly: '1,750', yearly: '18,800',
+        mPer: '/month', yPer: '/year',
+        yNote: 'Billed annually · Expert Assurance included'
+      },
+      {
+        num: 'p3', per: 'per3', note: 'n3',
+        monthly: '2,500', yearly: '21,000',
+        mPer: '/month', yPer: '/year',
+        yNote: 'Billed annually · RM 1,750 / mo effective'
+      },
+    ];
+
+    const btnM = document.getElementById('btnMonthly');
+    const btnY = document.getElementById('btnYearly');
+
+    function applyPricing(yearly: boolean) {
+      btnM?.classList.toggle('active', !yearly);
+      btnY?.classList.toggle('active', yearly);
+
+      plans.forEach(p => {
+        const numEl  = document.getElementById(p.num)  as HTMLElement | null;
+        const perEl  = document.getElementById(p.per)  as HTMLElement | null;
+        const noteEl = document.getElementById(p.note) as HTMLElement | null;
+        if (!numEl) return;
+
+        numEl.classList.add('switching');
+        setTimeout(() => {
+          numEl.textContent  = yearly ? p.yearly  : p.monthly;
+          if (perEl)  perEl.textContent  = yearly ? p.yPer   : p.mPer;
+          if (noteEl) noteEl.textContent = yearly ? p.yNote  : ' ';
+          numEl.classList.remove('switching');
+        }, 220);
+      });
+    }
+
+    btnM?.addEventListener('click', () => applyPricing(false));
+    btnY?.addEventListener('click', () => applyPricing(true));
+  </script>
+
+</BaseLayout>

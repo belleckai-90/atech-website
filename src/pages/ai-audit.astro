@@ -1,0 +1,259 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+---
+
+<BaseLayout
+  title="AI Audit Tools | ATECH Sustainability Consultancy"
+  description="ATECH's AI-powered energy audit tools — Atech.AI report generator and Compliance Reviewer. Built for government-compliant energy audits and sustainability reporting."
+>
+
+  <!-- 3D Hero -->
+  <section class="spline-section">
+    <div class="container">
+      <div class="spline-card">
+
+        <!-- Left: text -->
+        <div class="spline-left">
+          <span class="spline-badge">⚡ AI-Powered Auditing</span>
+          <h1 class="spline-heading">Audit Reports,<br/>Accelerated</h1>
+          <p class="spline-sub">Upload your workbook and our AI drafts all 60+ compliance-ready sections, reviewed and exported in under 30 minutes.</p>
+          <div class="spline-btns">
+            <a href="https://app.atechsustainability.com" class="spline-btn-primary">Try Atech.AI →</a>
+            <a href="https://review.atechsustainability.com" class="spline-btn-secondary">Compliance Reviewer →</a>
+          </div>
+        </div>
+
+        <!-- Right: Spline 3D -->
+        <div class="spline-right" id="splineRight">
+          <div class="spline-glow" id="splineGlow"></div>
+          <spline-viewer url="https://prod.spline.design/kZDDjO5HuC9GJUM2/scene.splinecode"></spline-viewer>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <script type="module" src="https://unpkg.com/@splinetool/viewer@1.9.82/build/spline-viewer.js"></script>
+
+  <script>
+    const panel = document.getElementById('splineRight');
+    const glow  = document.getElementById('splineGlow');
+    if (panel && glow) {
+      panel.addEventListener('mousemove', (e) => {
+        const { left, top, width, height } = panel.getBoundingClientRect();
+        const x = ((e.clientX - left) / width  * 100).toFixed(2) + '%';
+        const y = ((e.clientY - top)  / height * 100).toFixed(2) + '%';
+        glow.style.setProperty('--gx', x);
+        glow.style.setProperty('--gy', y);
+      });
+    }
+  </script>
+
+  <style>
+    .spline-section { background: #05050a; padding: 2.5rem 0; }
+    .spline-card {
+      display: grid;
+      grid-template-columns: 45% 55%;
+      height: 520px;
+      background: #05050a;
+      overflow: hidden;
+    }
+    .spline-left {
+      display: flex; flex-direction: column; justify-content: center;
+      gap: 1.1rem; padding: 3rem;
+      background: radial-gradient(ellipse at 0% 50%, rgba(6,182,212,0.08) 0%, transparent 70%);
+    }
+    .spline-badge { color: #06B6D4; font-size: 0.7rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.12em; }
+    .spline-heading {
+      font-size: clamp(1.8rem, 3vw, 2.6rem); font-weight: 800; line-height: 1.15;
+      background: linear-gradient(to bottom, #f0f0f0 40%, #777);
+      -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;
+    }
+    .spline-sub { color: rgba(255,255,255,0.6); font-size: 0.9rem; line-height: 1.7; max-width: 300px; margin: 0; }
+    .spline-btns { display: flex; gap: 0.75rem; flex-wrap: wrap; }
+    .spline-btn-primary {
+      padding: 0.6rem 1.3rem; background: #06B6D4; color: #fff;
+      font-weight: 600; border-radius: 8px; font-size: 0.875rem;
+      text-decoration: none; transition: background 0.2s;
+    }
+    .spline-btn-primary:hover { background: #0891B2; }
+    .spline-btn-secondary {
+      padding: 0.6rem 1.3rem; border: 1px solid rgba(255,255,255,0.2);
+      color: rgba(255,255,255,0.75); font-weight: 600; border-radius: 8px;
+      font-size: 0.875rem; text-decoration: none; transition: border-color 0.2s, color 0.2s;
+    }
+    .spline-btn-secondary:hover { border-color: rgba(255,255,255,0.5); color: #fff; }
+    .spline-right { position: relative; overflow: hidden; }
+    .spline-right spline-viewer { width: 100%; height: 100%; display: block; }
+    .spline-glow {
+      position: absolute; inset: 0; z-index: 10; pointer-events: none;
+      background: radial-gradient(circle 220px at var(--gx, 50%) var(--gy, 50%),
+        rgba(255,255,255,0.13) 0%,
+        rgba(200,230,255,0.06) 40%,
+        transparent 70%);
+      opacity: 0;
+      transition: opacity 0.35s ease;
+    }
+    .spline-right:hover .spline-glow { opacity: 1; }
+    @media (max-width: 700px) {
+      .spline-card { grid-template-columns: 1fr; height: auto; }
+      .spline-right { height: 320px; }
+    }
+  </style>
+
+  <!-- How it works -->
+  <section class="content-section">
+    <div class="container">
+      <h2 data-reveal style="text-align:center; margin-bottom:2.5rem;">How It Works</h2>
+      <div class="how-it-works" data-stagger>
+        <div class="how-step">
+          <h4>Upload Your Data</h4>
+          <p>Upload your audit Excel workbook or completed DOCX report. The AI reads all sheets, extracts key figures, and builds a structured data model.</p>
+        </div>
+        <div class="how-step">
+          <h4>AI Drafts or Reviews</h4>
+          <p>The AI either drafts all 60+ report sections from your workbook data, or systematically reviews each section against the government compliance checklist.</p>
+        </div>
+        <div class="how-step">
+          <h4>You Review & Approve</h4>
+          <p>Go section by section: approve, request a revision with feedback, or enter your own content. Every approved section trains the AI for future reports.</p>
+        </div>
+        <div class="how-step">
+          <h4>Export & Submit</h4>
+          <p>Download a finished Word document (report) or PDF findings report ready for client delivery or regulatory submission.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Tool 1: Atech.AI -->
+  <section class="content-section" style="background:var(--light);">
+    <div class="container">
+      <div style="display:grid; grid-template-columns:1fr 1fr; gap:3rem; align-items:center;">
+        <div data-reveal="left">
+          <span style="background:rgba(6,182,212,0.12); color:var(--teal); border-radius:6px; padding:0.3rem 0.8rem; font-size:0.8rem; font-weight:700; text-transform:uppercase; letter-spacing:0.05em;">Report Generator</span>
+          <h2 style="margin-top:1rem; border-left:4px solid var(--gold); padding-left:1rem;">Atech.AI</h2>
+          <p>Upload your completed audit Excel workbook and Atech.AI drafts every section of your energy audit report: executive summary, building description, baseline analysis, Energy Saving Measures, regression analysis, and conclusion.</p>
+          <p>Each section is reviewed by you with three options: <strong>Approve</strong>, <strong>Revise with feedback</strong>, or <strong>Manual input</strong>. Approved sections train the AI, making every subsequent report smarter.</p>
+          <ul style="margin:1rem 0 1.5rem 1.2rem; color:var(--muted); display:flex; flex-direction:column; gap:0.5rem;">
+            <li>60+ compliance ready sections generated automatically</li>
+            <li>Pulls real numbers directly from your workbook</li>
+            <li>Section by section review and approval</li>
+            <li>Learning memory that improves with every report</li>
+            <li>Exports to Word (.docx) matching government report format</li>
+          </ul>
+          <a href="https://app.atechsustainability.com" class="btn-primary">Access Atech.AI →</a>
+        </div>
+        <div data-reveal="right" style="background:#0d1117; border-radius:12px; overflow:hidden; box-shadow:0 16px 48px rgba(0,0,0,0.3);">
+          <div style="background:#2d2d2d; padding:0.6rem 1rem; display:flex; gap:0.5rem; align-items:center;">
+            <span style="width:11px;height:11px;border-radius:50%;background:#ff5f57;display:block;"></span>
+            <span style="width:11px;height:11px;border-radius:50%;background:#febc2e;display:block;"></span>
+            <span style="width:11px;height:11px;border-radius:50%;background:#28c840;display:block;"></span>
+            <span style="margin-left:auto;margin-right:auto;font-size:0.7rem;color:rgba(255,255,255,0.35);font-family:monospace;">Atech.AI</span>
+          </div>
+          <div style="padding:1.5rem; font-family:monospace; font-size:0.82rem; line-height:1.8;">
+            <span style="color:#06B6D4;">$ atech generate OfficeBuilding_Audit.xlsx</span><br/>
+            <span style="color:#58a6ff;">  Parsing 13 sheets...</span><br/>
+            <span style="color:#e6edf3;">  audit_master built ✓</span><br/>
+            <span style="color:#06B6D4;">  Generating 1.0 Executive Summary...</span><br/>
+            <span style="color:#e6edf3;">  ████████████░░░ 78%</span><br/>
+            <span style="color:#C8960C;">  Section ready for review ✓</span><br/>
+            <span style="color:rgba(255,255,255,0.3);">  [Approve / Revise / Manual]</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Tool 2: Compliance Reviewer -->
+  <section class="content-section">
+    <div class="container">
+      <div style="display:grid; grid-template-columns:1fr 1fr; gap:3rem; align-items:center;">
+        <div data-reveal="left" style="background:#0d1117; border-radius:12px; overflow:hidden; box-shadow:0 16px 48px rgba(0,0,0,0.15);">
+          <div style="background:#2d2d2d; padding:0.6rem 1rem; display:flex; gap:0.5rem; align-items:center;">
+            <span style="width:11px;height:11px;border-radius:50%;background:#ff5f57;display:block;"></span>
+            <span style="width:11px;height:11px;border-radius:50%;background:#febc2e;display:block;"></span>
+            <span style="width:11px;height:11px;border-radius:50%;background:#28c840;display:block;"></span>
+            <span style="margin-left:auto;margin-right:auto;font-size:0.7rem;color:rgba(255,255,255,0.35);font-family:monospace;">Compliance Reviewer</span>
+          </div>
+          <div style="padding:1.5rem; font-family:monospace; font-size:0.82rem; line-height:1.8;">
+            <span style="color:#06B6D4;">$ audit-review Mall_AuditReport.docx</span><br/>
+            <span style="color:#58a6ff;">  Pass 1: Extracting text + numbers...</span><br/>
+            <span style="color:#e6edf3;">  Verified 24 key figures ✓</span><br/>
+            <span style="color:#58a6ff;">  Pass 2: Reviewing against compliance checklist...</span><br/>
+            <span style="color:#ff5f57;">  ⚠ CRITICAL  Section 7.6 — R² not stated</span><br/>
+            <span style="color:#febc2e;">  ▲ MAJOR     Section 1.4 — BEI unit missing</span><br/>
+            <span style="color:#C8960C;">  ● MODERATE  Section 2.3 — U-value absent</span><br/>
+            <span style="color:#06B6D4;">  PDF findings report generated ✓</span>
+          </div>
+        </div>
+        <div data-reveal="right">
+          <span style="background:rgba(6,182,212,0.12); color:var(--teal); border-radius:6px; padding:0.3rem 0.8rem; font-size:0.8rem; font-weight:700; text-transform:uppercase; letter-spacing:0.05em;">QA & Compliance</span>
+          <h2 style="margin-top:1rem; border-left:4px solid var(--gold); padding-left:1rem;">Compliance Report Reviewer</h2>
+          <p>Upload a completed draft audit report (.docx) plus the audit workbook (.xlsx). The AI runs a three-pass review against the government energy audit compliance checklist, catching every gap before client delivery.</p>
+          <ul style="margin:1rem 0 1.5rem 1.2rem; color:var(--muted); display:flex; flex-direction:column; gap:0.5rem;">
+            <li>Numerical verification that cross-checks report figures against workbook</li>
+            <li>Full review against the government compliance checklist</li>
+            <li>Findings rated: Critical / Major / Moderate / Minor</li>
+            <li>Ground Rule scoring (GR1–GR4) with verdicts</li>
+            <li>Page references on every finding</li>
+            <li>BEI report generation from energy data</li>
+          </ul>
+          <a href="https://review.atechsustainability.com" class="btn-primary">Access Reviewer →</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Benefits -->
+  <section class="content-section" style="background:linear-gradient(135deg,#0F0F23 0%,#0D1B3A 100%); color:white;">
+    <div class="container" style="text-align:center;">
+      <h2 data-reveal style="color:white; margin-bottom:0.5rem;">Why AI-Assisted Auditing?</h2>
+      <p data-reveal style="color:rgba(255,255,255,0.6); max-width:520px; margin:0 auto 3rem;">The same expert judgment, delivered faster, more consistently, and with full compliance traceability.</p>
+      <div style="display:grid; grid-template-columns:repeat(auto-fit,minmax(200px,1fr)); gap:1.5rem;" data-stagger>
+        <div style="background:rgba(255,255,255,0.05); border:1px solid rgba(6,182,212,0.2); border-radius:12px; padding:1.5rem;">
+          <div style="font-size:1.8rem; margin-bottom:0.5rem;">📊</div>
+          <h4 style="color:#06B6D4; margin-bottom:0.5rem;">Energy Dashboard</h4>
+          <p style="color:rgba(255,255,255,0.55); font-size:0.9rem; margin:0;">Simply upload your energy consumption data and monitor efficiency trends in a live dashboard.</p>
+        </div>
+        <div style="background:rgba(255,255,255,0.05); border:1px solid rgba(6,182,212,0.2); border-radius:12px; padding:1.5rem;">
+          <div style="font-size:1.8rem; margin-bottom:0.5rem;">✅</div>
+          <h4 style="color:#06B6D4; margin-bottom:0.5rem;">Always Compliant</h4>
+          <p style="color:rgba(255,255,255,0.55); font-size:0.9rem; margin:0;">Every section is checked against the government compliance checklist. Ground rules are verified automatically.</p>
+        </div>
+        <div style="background:rgba(255,255,255,0.05); border:1px solid rgba(6,182,212,0.2); border-radius:12px; padding:1.5rem;">
+          <div style="font-size:1.8rem; margin-bottom:0.5rem;">🧠</div>
+          <h4 style="color:#06B6D4; margin-bottom:0.5rem;">Gets Smarter</h4>
+          <p style="color:rgba(255,255,255,0.55); font-size:0.9rem; margin:0;">Approved sections build a learning memory. Every report improves the quality of the next.</p>
+        </div>
+        <div style="background:rgba(255,255,255,0.05); border:1px solid rgba(6,182,212,0.2); border-radius:12px; padding:1.5rem;">
+          <div style="font-size:1.8rem; margin-bottom:0.5rem;">🔒</div>
+          <h4 style="color:#06B6D4; margin-bottom:0.5rem;">Secure & Private</h4>
+          <p style="color:rgba(255,255,255,0.55); font-size:0.9rem; margin:0;">Your audit data is never stored by third parties. Hosted on private cloud with role-based access.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="content-section" style="text-align:center;">
+    <div class="container">
+      <h2 data-reveal>Ready to Try It?</h2>
+      <p data-reveal style="max-width:480px; margin:0 auto 2rem; color:var(--muted);">Access is available to ATECH clients and partners. Contact us to get started.</p>
+      <div style="display:flex; gap:1rem; justify-content:center; flex-wrap:wrap;" data-reveal>
+        <a href="https://app.atechsustainability.com" class="btn-primary">Open Atech.AI</a>
+        <a href="https://review.atechsustainability.com" class="btn-secondary">Open Compliance Reviewer</a>
+        <a href="/contact" class="btn-secondary">Request Access</a>
+      </div>
+    </div>
+  </section>
+
+  <style>
+    @media (max-width: 700px) {
+      .content-section div[style*="grid-template-columns:1fr 1fr"] {
+        grid-template-columns: 1fr !important;
+      }
+    }
+  </style>
+
+</BaseLayout>

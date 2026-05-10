@@ -1,0 +1,362 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+
+const pageTitle = "Energy Audit & Sustainability Consultancy Malaysia | ATECH";
+const pageDescription = "MAESCO Gold Award-winning energy audit and sustainability consultancy in Malaysia. We help organisations cut energy costs, reduce carbon emissions, and meet EECA compliance through expert audits, HRDC-claimable training, and REM mentorship.";
+const ogImage = "/images/og-image.jpg";
+
+const schema = {
+  "@context": "https://schema.org",
+  "@type": "ProfessionalService",
+  "name": "ATECH Sustainability Consultancy",
+  "alternateName": "ASC",
+  "description": pageDescription,
+  "url": "https://atechsustainability.com",
+  "logo": "https://atechsustainability.com/images/logo.png",
+  "image": "https://atechsustainability.com/images/og-image.jpg",
+  "address": { "@type": "PostalAddress", "addressCountry": "MY" },
+  "areaServed": { "@type": "Country", "name": "Malaysia" },
+  "award": "MAESCO Gold Award for Energy Management Excellence 2025",
+  "serviceType": ["Energy Audit", "Sustainability Training", "Registered Energy Manager Mentorship", "EECA Compliance", "Sustainability Financing"]
+};
+---
+
+<BaseLayout title={pageTitle} description={pageDescription} ogImage={ogImage}>
+  <script type="application/ld+json" set:html={JSON.stringify(schema)} />
+
+  <!-- Hero -->
+  <section class="hero">
+    <div class="hero-aurora" aria-hidden="true"></div>
+    <div class="container" style="position:relative;z-index:1;">
+      <span class="award-badge">🏆 MAESCO Gold Award Winner 2025</span>
+      <h1>
+        Empowering<br/>
+        <span class="cycle-text" id="cycleText">a Sustainable Future</span><br/>
+        for Malaysian Businesses
+      </h1>
+      <p class="lead">
+        We help organisations reduce energy use, cut carbon emissions, and build a
+        culture of sustainability through expert audits, HRDC-claimable training,
+        and data-driven strategies.
+      </p>
+      <div class="cta-group">
+        <a href="/contact" class="btn-primary">Start Your Energy Journey</a>
+        <a href="/services" class="btn-secondary">Explore Our Services</a>
+      </div>
+    </div>
+  </section>
+
+  <style>
+    /* ── Aurora background ── */
+    .hero-aurora {
+      position: absolute;
+      inset: -20px;
+      z-index: 0;
+      pointer-events: none;
+      will-change: background-position;
+
+      /* Layer 1: dark stripe mask  |  Layer 2: brand colour bands */
+      background-image:
+        repeating-linear-gradient(
+          100deg,
+          rgba(15,15,35,0.55) 0%,  rgba(15,15,35,0.55) 7%,
+          transparent 10%,          transparent 12%,
+          rgba(15,15,35,0.55) 16%
+        ),
+        repeating-linear-gradient(
+          100deg,
+          #06B6D4 10%,
+          #818CF8 15%,
+          #67E8F9 20%,
+          #A78BFA 25%,
+          #0891B2 30%
+        );
+      background-size: 300% 300%, 200% 200%;
+      background-position: 50% 50%, 50% 50%;
+      filter: blur(24px);
+      opacity: 0.38;
+      animation: heroAurora 60s linear infinite;
+
+      /* Show only in the top-right quadrant, fade out toward centre */
+      mask-image: radial-gradient(ellipse at 95% 5%, black 0%, transparent 60%);
+      -webkit-mask-image: radial-gradient(ellipse at 95% 5%, black 0%, transparent 60%);
+    }
+
+    /* Second layer — offset timing, bottom-left accent */
+    .hero-aurora::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background-image:
+        repeating-linear-gradient(
+          100deg,
+          transparent 0%, transparent 7%,
+          rgba(15,15,35,0.3) 10%, rgba(15,15,35,0.3) 12%,
+          transparent 16%
+        ),
+        repeating-linear-gradient(
+          100deg,
+          #A78BFA 10%,
+          #06B6D4 18%,
+          #818CF8 24%,
+          #67E8F9 32%,
+          #A78BFA 38%
+        );
+      background-size: 200% 200%, 150% 150%;
+      background-position: 50% 50%, 50% 50%;
+      animation: heroAurora 80s linear infinite reverse;
+      mask-image: radial-gradient(ellipse at 10% 90%, black 0%, transparent 55%);
+      -webkit-mask-image: radial-gradient(ellipse at 10% 90%, black 0%, transparent 55%);
+      mix-blend-mode: screen;
+      opacity: 0.5;
+    }
+
+    @keyframes heroAurora {
+      0%   { background-position: 50% 50%, 50% 50%; }
+      100% { background-position: 350% 50%, 350% 50%; }
+    }
+
+    /* ── Cycling word ── */
+    .cycle-text {
+      display: inline-block;
+      background: linear-gradient(90deg, #06B6D4 0%, #A78BFA 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    @keyframes wordIn {
+      from { opacity: 0; transform: translateY(28px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+    @keyframes wordOut {
+      from { opacity: 1; transform: translateY(0); }
+      to   { opacity: 0; transform: translateY(-28px); }
+    }
+
+    .cycle-text.is-exiting {
+      animation: wordOut 0.38s ease forwards;
+    }
+    .cycle-text.is-entering {
+      animation: wordIn 0.6s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+    }
+  </style>
+
+  <script>
+    const words = ['a Sustainable Future','an Energy Efficiency','a Carbon Reduction','an EECA Compliance','a Green Financing'];
+    const el = document.getElementById('cycleText');
+    if (el) {
+      let idx = 0;
+      setInterval(() => {
+        el.classList.add('is-exiting');
+        el.classList.remove('is-entering');
+        setTimeout(() => {
+          idx = (idx + 1) % words.length;
+          el.textContent = words[idx];
+          el.classList.remove('is-exiting');
+          el.classList.add('is-entering');
+        }, 380);
+      }, 2800);
+    }
+  </script>
+
+  <!-- Award Highlight -->
+  <section class="award-section">
+    <div class="container">
+      <img
+        src="/images/maesco-award.jpg"
+        alt="ATECH team receiving the MAESCO Gold Award for Energy Management Excellence 2025"
+        loading="lazy"
+        data-reveal="left"
+      />
+      <div data-reveal="right">
+        <h2>Recognised for Energy Management Excellence</h2>
+        <p>
+          ATECH Sustainability Consultancy has been awarded the
+          <strong>MAESCO Gold Award for Energy Management Excellence 2025</strong>
+          by the Malaysian Association of Energy Service Companies (MAESCO).
+        </p>
+        <p>
+          This recognition reflects our proven capability in delivering measurable
+          energy performance solutions that help organisations reduce operational
+          costs, enhance system efficiency, and achieve their sustainability goals.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Services Overview -->
+  <section class="services">
+    <div class="container">
+      <h2 data-reveal>Our Expertise</h2>
+      <p class="section-intro" data-reveal>
+        Comprehensive sustainability services tailored to Malaysian organisations,
+        from energy audits to green financing.
+      </p>
+      <div class="services-grid" data-stagger>
+        <a href="/services#energy-management" class="service-card">
+          <h3>Energy Management</h3>
+          <p>Energy audits, consumption analysis, and Energy Saving Measures (ESMs) backed by our Sustainable Energy Management Program (SEMP).</p>
+          <span class="learn-more">Learn more →</span>
+        </a>
+        <a href="/services#training" class="service-card">
+          <h3>HRDC-Claimable Training</h3>
+          <p>Energy, sustainability, and GHG accounting training programs. Fully claimable under HRD Corp for Malaysian employers.</p>
+          <span class="learn-more">Learn more →</span>
+        </a>
+        <a href="/services#rem-mentorship" class="service-card">
+          <h3>REM Appointment &amp; Mentoring</h3>
+          <p>Outsourced REM appointment for immediate EECA compliance, plus structured mentoring to prepare your engineers for in-house certification ahead of the 2027 regulatory shift.</p>
+          <span class="learn-more">Learn more →</span>
+        </a>
+        <a href="/services#financing" class="service-card">
+          <h3>Sustainability Financing</h3>
+          <p>Advisory on Green Sukuk, ESG-linked loans, and government-supported green investment schemes.</p>
+          <span class="learn-more">Learn more →</span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- AI Section -->
+  <section class="ai-section">
+    <div class="container">
+      <h2 data-reveal>Audit Reports, Accelerated by AI</h2>
+      <p class="ai-sub" data-reveal>We built our own AI tools, cutting report preparation from days to under 30 minutes, with full government compliance built in.</p>
+
+      <!-- Stats -->
+      <div class="ai-stats" data-reveal>
+        <div class="ai-stat">
+          <span class="ai-stat-num" data-count="60">0</span>
+          <span class="ai-stat-label">Sections per report</span>
+        </div>
+        <div class="ai-stat">
+          <span class="ai-stat-num">&lt;30</span>
+          <span class="ai-stat-label">Minutes to draft</span>
+        </div>
+        <div class="ai-stat">
+          <span class="ai-stat-num">100%</span>
+          <span class="ai-stat-label">Fully compliant</span>
+        </div>
+        <div class="ai-stat">
+          <span class="ai-stat-num" style="font-size:1.4rem;">Dashboard</span>
+          <span class="ai-stat-label">Simply upload your energy consumption</span>
+        </div>
+      </div>
+
+      <!-- Terminal -->
+      <div class="terminal-wrap" data-reveal>
+        <div class="terminal-bar">
+          <span class="terminal-dot red"></span>
+          <span class="terminal-dot yellow"></span>
+          <span class="terminal-dot green"></span>
+          <span class="terminal-title">Atech.AI Section Generator</span>
+        </div>
+        <div class="terminal-body" id="terminal-body">
+          <span class="terminal-line dim">Initialising ATECH Energy Audit AI...</span>
+        </div>
+      </div>
+
+      <!-- Tool Cards -->
+      <div class="ai-tools-grid" data-stagger>
+        <div class="ai-tool-card">
+          <div class="ai-tool-icon">📝</div>
+          <h3>Atech.AI Report Generator</h3>
+          <p>Upload your audit Excel workbook and AI drafts all 60+ sections of a compliance-ready energy audit report. Review, revise, and export a finished Word document in under 30 minutes.</p>
+          <div class="ai-tool-tags">
+            <span class="ai-tag">Compliance-ready</span>
+            <span class="ai-tag">60+ sections</span>
+
+            <span class="ai-tag">Word export</span>
+          </div>
+          <a href="https://app.atechsustainability.com" class="ai-tool-link">Access tool →</a>
+        </div>
+        <div class="ai-tool-card">
+          <div class="ai-tool-icon">🔍</div>
+          <h3>Compliance Report Reviewer</h3>
+          <p>Upload a completed audit report and AI reviews every section against the government compliance checklist, flagging Critical, Major, and Minor findings with page references.</p>
+          <div class="ai-tool-tags">
+            <span class="ai-tag">Gov checklist</span>
+            <span class="ai-tag">BEI reports</span>
+
+            <span class="ai-tag">PDF output</span>
+          </div>
+          <a href="https://review.atechsustainability.com" class="ai-tool-link">Access tool →</a>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Why ATECH -->
+  <section class="why-us">
+    <div class="container">
+      <h2 data-reveal>Empowering Businesses to Save Energy and Costs</h2>
+      <p data-reveal>
+        ATECH helps Malaysian businesses achieve energy efficiency and sustainability
+        through expert audits and training programs, maximising savings and
+        environmental impact in an evolving energy landscape.
+      </p>
+      <a href="/about" class="btn-secondary">Meet the Trainer</a>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section class="faq">
+    <div class="container">
+      <h2 data-reveal>Frequently Asked Questions</h2>
+
+      <details data-reveal>
+        <summary>What is an Energy Audit?</summary>
+        <div>
+          <p>An energy audit is a systematic assessment of how your facility uses energy and where it can be saved. It typically involves:</p>
+          <ul>
+            <li><strong>Data Collection</strong> – Gathering utility bills, equipment specifications, and operational practices.</li>
+            <li><strong>On-Site Assessment</strong> – Inspecting HVAC, lighting, motors, compressors, and the building envelope.</li>
+            <li><strong>Analysis</strong> – Measuring consumption patterns, benchmarking performance, and identifying inefficiencies.</li>
+            <li><strong>Recommendations</strong> – Proposing Energy Saving Measures (ESMs) such as equipment upgrades or process improvements.</li>
+            <li><strong>Financial & Environmental Evaluation</strong> – Estimating cost savings, payback period, and carbon reduction potential.</li>
+          </ul>
+        </div>
+      </details>
+
+      <details>
+        <summary>How do we start saving energy?</summary>
+        <div>
+          <p>Begin with an energy audit to establish your baseline. From there, you can build a clear Energy Efficiency Roadmap. As Peter Drucker said, <em>"If you can't measure it, you can't manage it."</em></p>
+        </div>
+      </details>
+
+      <details>
+        <summary>How much does an energy audit cost?</summary>
+        <div>
+          <p>Costs vary based on building type, size, and systems. We provide a tailored quotation after a preliminary site visit. Financing options such as <strong>EACG</strong> or <strong>HRDC programs</strong> may help cover the cost.</p>
+          <p><a href="/contact">Request a quotation →</a></p>
+        </div>
+      </details>
+
+      <details>
+        <summary>Is your training HRDC claimable?</summary>
+        <div>
+          <p>Yes. Our sustainability and energy training programs are registered with HRD Corp, meaning Malaysian employers can claim training costs through their HRDC levy.</p>
+        </div>
+      </details>
+
+      <details>
+        <summary>Do you serve clients outside Klang Valley?</summary>
+        <div>
+          <p>Yes. We serve clients across Malaysia, including Penang, Johor, Sabah, and Sarawak. Site visits are arranged based on project scope.</p>
+        </div>
+      </details>
+    </div>
+  </section>
+
+  <!-- Contact CTA -->
+  <section class="contact-cta">
+    <div class="container">
+      <h2 data-reveal>Ready to Reduce Your Energy Costs?</h2>
+      <p data-reveal>Let's discuss how ATECH can help your organisation achieve energy efficiency and sustainability excellence.</p>
+      <a href="/contact" class="btn-primary">Get in Touch</a>
+    </div>
+  </section>
+</BaseLayout>

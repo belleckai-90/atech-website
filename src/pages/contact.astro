@@ -1,0 +1,73 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+---
+
+<BaseLayout
+  title="Contact ATECH | Energy Audit & Sustainability Consultancy Malaysia"
+  description="Get in touch with ATECH Sustainability Consultancy. Request an energy audit quotation, enquire about training, or ask us anything about energy efficiency in Malaysia."
+>
+
+  <section class="page-hero">
+    <div class="container">
+      <h1>Get in Touch</h1>
+      <p>Tell us about your project and we'll get back to you within 1 business day.</p>
+    </div>
+  </section>
+
+  <section class="content-section">
+    <div class="container">
+      <div id="sent-banner" style="display:none; background:#d1fae5; border:1px solid #6ee7b7; border-radius:8px; padding:1rem 1.5rem; margin-bottom:1.5rem; color:#065f46;">
+        ✅ <strong>Message sent!</strong> We'll get back to you within 1 business day.
+      </div>
+      <form
+        class="contact-form"
+        action="https://formspree.io/f/REPLACE_WITH_YOUR_FORM_ID"
+        method="POST"
+      >
+        <input type="hidden" name="_subject" value="New enquiry from atechsustainability.com" />
+        <input type="hidden" name="_next" value="https://atechsustainability.com/contact?sent=1" />
+
+        <div class="form-group">
+          <label for="name">Full Name *</label>
+          <input type="text" id="name" name="name" required placeholder="Your name" />
+        </div>
+
+        <div class="form-group">
+          <label for="email">Email Address *</label>
+          <input type="email" id="email" name="email" required placeholder="you@company.com" />
+        </div>
+
+        <div class="form-group">
+          <label for="company">Company / Organisation</label>
+          <input type="text" id="company" name="company" placeholder="Company name" />
+        </div>
+
+        <div class="form-group">
+          <label for="service">Service of Interest</label>
+          <select id="service" name="service">
+            <option value="">Select a service...</option>
+            <option value="energy-audit">Energy Audit</option>
+            <option value="training">HRDC Training</option>
+            <option value="rem-mentorship">REM Mentorship</option>
+            <option value="financing">Sustainability Financing</option>
+            <option value="other">Other / General Enquiry</option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label for="message">Message *</label>
+          <textarea id="message" name="message" required placeholder="Tell us about your project, building type, location, or any questions you have..."></textarea>
+        </div>
+
+        <button type="submit" class="btn-primary" style="width: 100%;">Send Message</button>
+      </form>
+    </div>
+  </section>
+
+  <script>
+    if (new URLSearchParams(window.location.search).get('sent') === '1') {
+      document.getElementById('sent-banner').style.display = 'block';
+    }
+  </script>
+
+</BaseLayout>

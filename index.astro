@@ -1,0 +1,224 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+
+const pageTitle = "Energy Audit & Sustainability Consultancy Malaysia | ATECH";
+const pageDescription = "MAESCO Gold Award-winning energy audit and sustainability consultancy in Malaysia. We help organisations cut energy costs, reduce carbon emissions, and meet EECA compliance through expert audits, HRDC-claimable training, and REM mentorship.";
+const ogImage = "/images/og-image.jpg";
+
+// JSON-LD structured data for Google
+const schema = {
+  "@context": "https://schema.org",
+  "@type": "ProfessionalService",
+  "name": "ATECH Sustainability Consultancy",
+  "alternateName": "ASC",
+  "description": pageDescription,
+  "url": "https://atechsustainability.com",
+  "logo": "https://atechsustainability.com/images/logo.jpg",
+  "image": "https://atechsustainability.com/images/og-image.jpg",
+  "address": {
+    "@type": "PostalAddress",
+    "addressCountry": "MY"
+  },
+  "areaServed": {
+    "@type": "Country",
+    "name": "Malaysia"
+  },
+  "award": "MAESCO Gold Award for Energy Management Excellence 2025",
+  "serviceType": [
+    "Energy Audit",
+    "Sustainability Training",
+    "Registered Energy Manager Mentorship",
+    "EECA Compliance",
+    "Sustainability Financing"
+  ]
+};
+---
+
+<BaseLayout
+  title={pageTitle}
+  description={pageDescription}
+  ogImage={ogImage}
+>
+  <script type="application/ld+json" set:html={JSON.stringify(schema)} />
+
+  <!-- Hero Section -->
+  <section class="hero">
+    <div class="container">
+      <span class="award-badge">🏆 MAESCO Gold Award Winner 2025</span>
+      <h1>Empowering a Sustainable Future for Malaysian Businesses</h1>
+      <p class="lead">
+        We help organisations reduce energy use, cut carbon emissions, and build a
+        culture of sustainability through expert audits, HRDC-claimable training,
+        and data-driven strategies.
+      </p>
+      <div class="cta-group">
+        <a href="/contact" class="btn-primary">Start Your Energy Journey</a>
+        <a href="/services" class="btn-secondary">Explore Our Services</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Award Highlight -->
+  <section class="award-section">
+    <div class="container">
+      <img
+        src="/images/maesco-award.jpg"
+        alt="ATECH team receiving the MAESCO Gold Award for Energy Management Excellence 2025"
+        loading="lazy"
+      />
+      <div>
+        <h2>Recognised for Energy Management Excellence</h2>
+        <p>
+          ATECH Sustainability Consultancy has been awarded the
+          <strong>MAESCO Gold Award for Energy Management Excellence 2025</strong>
+          by the Malaysian Association of Energy Service Companies (MAESCO).
+        </p>
+        <p>
+          This recognition reflects our proven capability in delivering high-impact
+          energy performance solutions that help organisations reduce operational
+          costs, enhance system efficiency, and achieve long-term sustainability goals.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Services Overview -->
+  <section class="services">
+    <div class="container">
+      <h2>Our Expertise</h2>
+      <p class="section-intro">
+        Comprehensive sustainability services tailored to Malaysian organisations,
+        from energy audits to green financing.
+      </p>
+
+      <div class="services-grid">
+        <a href="/services#energy-management" class="service-card">
+          <h3>Energy Management</h3>
+          <p>
+            Energy audits, consumption analysis, and Energy Saving Measures (ESMs)
+            backed by our Sustainable Energy Management Program (SEMP).
+          </p>
+          <span class="learn-more">Learn more →</span>
+        </a>
+
+        <a href="/services#training" class="service-card">
+          <h3>HRDC-Claimable Training</h3>
+          <p>
+            Energy, sustainability, and GHG accounting training programs.
+            Fully claimable under HRD Corp for Malaysian employers.
+          </p>
+          <span class="learn-more">Learn more →</span>
+        </a>
+
+        <a href="/services#rem-mentorship" class="service-card">
+          <h3>REM Mentorship</h3>
+          <p>
+            Mentorship for Registered Energy Manager certification, EECA compliance,
+            and EMGS framework implementation.
+          </p>
+          <span class="learn-more">Learn more →</span>
+        </a>
+
+        <a href="/services#financing" class="service-card">
+          <h3>Sustainability Financing</h3>
+          <p>
+            Advisory on Green Sukuk, ESG-linked loans, and government-supported
+            green investment schemes.
+          </p>
+          <span class="learn-more">Learn more →</span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Why ATECH -->
+  <section class="why-us">
+    <div class="container">
+      <h2>Empowering Businesses to Save Energy and Costs</h2>
+      <p>
+        ATECH helps Malaysian businesses achieve energy efficiency and sustainability
+        through expert audits and training programs—maximising savings and
+        environmental impact in an evolving energy landscape.
+      </p>
+      <a href="/about" class="btn-secondary">Meet the Trainer</a>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section class="faq">
+    <div class="container">
+      <h2>Frequently Asked Questions</h2>
+
+      <details>
+        <summary>What is an Energy Audit?</summary>
+        <div>
+          <p>An energy audit is a systematic assessment of how your facility uses energy and where it can be saved. It typically involves:</p>
+          <ul>
+            <li><strong>Data Collection</strong> – Gathering utility bills, equipment specifications, and operational practices.</li>
+            <li><strong>On-Site Assessment</strong> – Inspecting HVAC, lighting, motors, compressors, and the building envelope.</li>
+            <li><strong>Analysis</strong> – Measuring consumption patterns, benchmarking performance, and identifying inefficiencies.</li>
+            <li><strong>Recommendations</strong> – Proposing Energy Saving Measures (ESMs) such as equipment upgrades or process improvements.</li>
+            <li><strong>Financial & Environmental Evaluation</strong> – Estimating cost savings, payback period, and carbon reduction potential.</li>
+          </ul>
+        </div>
+      </details>
+
+      <details>
+        <summary>How do we start saving energy?</summary>
+        <div>
+          <p>
+            Begin with an energy audit to establish your baseline. From there, you
+            can build a clear Energy Efficiency Roadmap. As Peter Drucker said,
+            <em>"If you can't measure it, you can't manage it."</em>
+          </p>
+        </div>
+      </details>
+
+      <details>
+        <summary>How much does an energy audit cost?</summary>
+        <div>
+          <p>
+            Costs vary based on building type, size, and systems. We provide a
+            tailored quotation after a preliminary site visit. Financing options
+            such as <strong>EACG</strong> or <strong>HRDC programs</strong> may
+            help cover the cost.
+          </p>
+          <p><a href="/contact">Request a quotation →</a></p>
+        </div>
+      </details>
+
+      <details>
+        <summary>Is your training HRDC claimable?</summary>
+        <div>
+          <p>
+            Yes. Our sustainability and energy training programs are registered
+            with HRD Corp, meaning Malaysian employers can claim training costs
+            through their HRDC levy.
+          </p>
+        </div>
+      </details>
+
+      <details>
+        <summary>Do you serve clients outside Klang Valley?</summary>
+        <div>
+          <p>
+            Yes. We serve clients across Malaysia, including Penang, Johor, Sabah,
+            and Sarawak. Site visits are arranged based on project scope.
+          </p>
+        </div>
+      </details>
+    </div>
+  </section>
+
+  <!-- Contact CTA -->
+  <section class="contact-cta">
+    <div class="container">
+      <h2>Ready to Reduce Your Energy Costs?</h2>
+      <p>
+        Let's discuss how ATECH can help your organisation achieve energy efficiency
+        and sustainability excellence.
+      </p>
+      <a href="/contact" class="btn-primary">Get in Touch</a>
+    </div>
+  </section>
+</BaseLayout>
