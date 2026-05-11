@@ -19,6 +19,9 @@ import BaseLayout from '../layouts/BaseLayout.astro';
       <div id="sent-banner" style="display:none; background:#d1fae5; border:1px solid #6ee7b7; border-radius:8px; padding:1rem 1.5rem; margin-bottom:1.5rem; color:#065f46;">
         ✅ <strong>Message sent!</strong> We'll get back to you within 1 business day.
       </div>
+      <div id="plan-banner" style="display:none; background:#eff6ff; border:1px solid #93c5fd; border-radius:8px; padding:0.85rem 1.5rem; margin-bottom:1.5rem; color:#1e40af; font-size:0.92rem;">
+        📦 <strong>Selected plan:</strong> <span id="plan-label"></span>
+      </div>
       <form
         class="contact-form"
         action="https://formspree.io/f/mykolvjz"
@@ -26,6 +29,7 @@ import BaseLayout from '../layouts/BaseLayout.astro';
       >
         <input type="hidden" name="_subject" value="New enquiry from atechsustainability.com" />
         <input type="hidden" name="_next" value="https://atechsustainability.com/contact?sent=1" />
+        <input type="hidden" name="plan" id="plan-field" />
 
         <div class="form-group">
           <label for="name">Full Name *</label>
@@ -65,8 +69,25 @@ import BaseLayout from '../layouts/BaseLayout.astro';
   </section>
 
   <script>
-    if (new URLSearchParams(window.location.search).get('sent') === '1') {
+    const params = new URLSearchParams(window.location.search);
+
+    if (params.get('sent') === '1') {
       document.getElementById('sent-banner').style.display = 'block';
+    }
+
+    const plan = params.get('plan');
+    if (plan) {
+      const planField = document.getElementById('plan-field') as HTMLInputElement | null;
+      const planLabel = document.getElementById('plan-label');
+      const planBanner = document.getElementById('plan-banner');
+      const messageEl = document.getElementById('message') as HTMLTextAreaElement | null;
+
+      if (planField) planField.value = plan;
+      if (planLabel) planLabel.textContent = plan;
+      if (planBanner) planBanner.style.display = 'block';
+      if (messageEl && !messageEl.value) {
+        messageEl.value = `I'm interested in the ${plan} package. Please provide more information.`;
+      }
     }
   </script>
 
